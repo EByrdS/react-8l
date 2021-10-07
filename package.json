@@ -3,15 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "lint": "next lint"
   },
   "dependencies": {
-    "gh-pages": "^3.2.3",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
@@ -19,6 +16,5 @@
   "devDependencies": {
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2"
-  },
-  "homepage": "https://github.com/EByrdS/react-8l.git"
+  }
 }
