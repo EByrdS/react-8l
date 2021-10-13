@@ -8,10 +8,8 @@ import TodoListApp from '../pages/index'
 
 describe("TodoListApp", () => {
  it("should render 8th Light", () => {
-   const textToFind = "8th Light"
-
    render(<TodoListApp />);
-   const heading = screen.getByText(textToFind);
+   const heading = screen.getByText(/8th Light/);
 
    expect(heading).toBeInTheDocument();
  });
