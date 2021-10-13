@@ -11,28 +11,44 @@ import TodoForm from '../components/todo-form'
 // Mocking imports
 import shortid from 'shortid'
 
+// Mock shortid
 jest.mock('shortid');
+const mockedId = 'MockedShortId-123'
+shortid.generate.mockImplementation(() => mockedId)
+// Mock the function than handles the generated Todo
 const mockTodoCreate = jest.fn(x => x);
 
 describe('TodoForm', () => {
-  it('calls handleTodoCreate', () => {
-    const mockedId = 'MockedShortId-123'
-    shortid.generate.mockImplementation(() => mockedId);
+  beforeEach(() => {
+    jest.clearAllMocks(); // the mockTodoCreate needs to be reset
+  });
 
-    const { form } = render(<TodoForm
+  it('calls handleTodoCreate', () => {
+    const { container, queryByPlaceholderText } = render(<TodoForm
       handleTodoCreate={mockTodoCreate}
     />);
 
-    userEvent.type(screen.queryByPlaceholderText('Enter new todo'),
+    userEvent.type(queryByPlaceholderText('Enter new todo'),
                    'Buy milk{enter}');
 
     expect(mockTodoCreate).toHaveBeenCalled();
     expect(mockTodoCreate.mock.results[0].value).toMatchObject(
       {
-        id: mockedId,
+        id: 'MockedShortId-123',
         isCompleted: false,
         text: 'Buy milk'
       }
     );
+  });
+
+  it('does not call handleTodoCreate with empty input', () => {
+    const { container, queryByPlaceholderText } = render(<TodoForm
+      handleTodoCreate={mockTodoCreate}
+    />);
+
+    userEvent.type(queryByPlaceholderText('Enter new todo'),
+                   '{enter}');
+
+    expect(mockTodoCreate).not.toHaveBeenCalled();
   });
 });
