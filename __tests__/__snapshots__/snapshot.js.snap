@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div
+  className="todo-list-app"
+>
+  <p>
+    Hello World
+  </p>
+  <div
+    className="todo-form"
+  >
+    <input
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Enter new todo"
+      type="text"
+    />
+  </div>
+  <div
+    className="todo-list"
+  >
+    <ul />
+  </div>
+</div>
+`;
