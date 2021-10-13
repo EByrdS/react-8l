@@ -76,7 +76,6 @@ const TodoListApp = () => {
     <p>Hello World</p>
       {/* Todo form component */}
       <TodoForm
-        todos={todos}
         handleTodoCreate={handleTodoCreate}
       />
       {/* Todo list component */}
