@@ -33,7 +33,7 @@ const TodoListApp = () => {
     const newTodosState: TodoInterface[] = [...todos]
 
     // Find correct todo item to update
-    newTodosState.find((todo: TodoInterface) => todo.id === id)!.text = event.target.value
+    newTodosState.find((todo: TodoInterface) => todo.id === id)!.text = event.target?.value
 
     // Update todos state
     setTodos(newTodosState)
