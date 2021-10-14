@@ -1,6 +1,5 @@
 // Import dependencies
 import * as React from 'react'
-import { render } from 'react-dom'
 
 // Import components
 import TodoForm from '../components/todo-form'
