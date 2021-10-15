@@ -20,7 +20,7 @@ jobs:
       tag: '13.4'
     steps:
       - checkout
-      -node/install-packages
+      - node/install-packages
       - run:
           command: npm run test:ci
 
