@@ -7,6 +7,9 @@ exports[`renders homepage unchanged 1`] = `
   <h1>
     This is a project for 8th Light Ltd.
   </h1>
+  <p>
+    This project was built with love
+  </p>
   <div
     className="todo-form"
   >

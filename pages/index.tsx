@@ -73,6 +73,7 @@ const TodoListApp = () => {
   return (
     <div className="todo-list-app">
     <h1>This is a project for 8th Light Ltd.</h1>
+    <p>This project was built with love</p>
       {/* Todo form component */}
       <TodoForm
         handleTodoCreate={handleTodoCreate}
