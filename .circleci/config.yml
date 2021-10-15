@@ -20,7 +20,8 @@ jobs:
       tag: '13.4'
     steps:
       - checkout
-      - node/install-packages
+      - node/install-packages:
+          override-ci-command: npm install
       - run:
           command: npm run test:ci
 
