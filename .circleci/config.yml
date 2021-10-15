@@ -23,7 +23,7 @@ jobs:
       - node/install-packages:
           override-ci-command: npm install
       - run:
-          command: npm run test:ci
+          command: npm run test
 
 workflows:
   # Below is the definition of your workflow.
